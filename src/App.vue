@@ -12,16 +12,15 @@ import { ref } from 'vue'
 import { rand } from '@vueuse/core'
 
 const clicker = useClickerStore()
-const { play:playNormalClickSe } = useSound(clickSe, { volume: 0.3 })
-const {play: playRareClickSe} = useSound(clickRareSe, {volume: 0.5})
-
+const { play: playNormalClickSe } = useSound(clickSe, { volume: 0.3 })
+const { play: playRareClickSe } = useSound(clickRareSe, { volume: 0.5 })
 
 const kaniAnimations = ref<number[]>([])
 
 const onClickKani = () => {
   if (Math.random() < 0.03) {
     playRareClickSe()
-  }else{
+  } else {
     playNormalClickSe()
   }
 
@@ -44,11 +43,7 @@ const onClickKani = () => {
       height="200px"
       @click="onClickKani"
     />
-    <click-kani
-      v-for="id in kaniAnimations"
-      :key="id"
-      class="click-kani-animation"
-    />
+    <click-kani v-for="id in kaniAnimations" :key="id" class="click-kani-animation" />
   </div>
   <upgrade-bar />
 </template>
@@ -61,7 +56,7 @@ const onClickKani = () => {
     transform: scale(1.05);
   }
 }
-.click-animation-position{
+.click-animation-position {
   position: relative;
 }
 .click-kani-animation {
