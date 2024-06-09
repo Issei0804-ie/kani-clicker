@@ -2,8 +2,16 @@
 import GoldStatus from '@/components/GoldStatus.vue'
 import { useClickerStore } from '@/stores/clicker'
 import UpgradeBar from '@/components/upgradeBar/UpgradeBar.vue'
+// https://github.com/vueuse/sound/issues/42
+// @ts-expect-error
+import { useSound } from '@vueuse/sound'
+import clickSe from '@/assets/se/click.mp3'
+
 const clicker = useClickerStore()
+const {play} = useSound(clickSe, {volume: 0.3})
+
 const clickKani = () => {
+  play()
   clicker.click()
 }
 </script>
