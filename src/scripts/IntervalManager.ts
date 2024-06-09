@@ -1,8 +1,8 @@
-import { useEbiStore } from '@/stores/ebi'
+import { useNetStore } from '@/stores/net'
 
 export const initIntervalManager = () => {
-  const ebi = useEbiStore()
+  const net = useNetStore()
   setInterval(async () => {
-    ebi.act()
+    net.act()
   }, 1000)
 }

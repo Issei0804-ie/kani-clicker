@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useGoldStore } from '@/stores/gold'
-import { useEbiStore } from '@/stores/ebi'
+import { useNetStore } from '@/stores/net'
 import { computed } from 'vue'
 const gold = useGoldStore()
 
@@ -9,10 +9,10 @@ function floor(target: number, n: number) {
 }
 
 // 困ったらあとでどこかにまとめる
-const ebi = useEbiStore()
+const net = useNetStore()
 
 const kaniPerSec = computed(() => {
-  return ebi.power
+  return net.power
 })
 </script>
 
