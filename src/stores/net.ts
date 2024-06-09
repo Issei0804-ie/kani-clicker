@@ -12,7 +12,7 @@ export const useNetStore = defineStore('net', () => {
 
   const upgradeCount = useLocalStorage('net/upgradeCount', 0)
   const upgradeCost = computed(() => {
-    return Math.floor(5.1 ** upgradeCount.value + 15)
+    return Math.floor(2 ** upgradeCount.value + 15)
   })
   const upgrade = () => {
     const cost = upgradeCost.value
