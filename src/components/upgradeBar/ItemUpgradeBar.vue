@@ -21,7 +21,7 @@ const props = defineProps({
     required: true
   },
   isUpdateButtonDisabled: {
-    type: Function,
+    type: Boolean,
     required: true
   }
 })
