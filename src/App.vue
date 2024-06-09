@@ -8,7 +8,7 @@ import { useSound } from '@vueuse/sound'
 import clickSe from '@/assets/se/click.mp3'
 
 const clicker = useClickerStore()
-const {play} = useSound(clickSe, {volume: 0.3})
+const { play } = useSound(clickSe, { volume: 0.3 })
 
 const clickKani = () => {
   play()

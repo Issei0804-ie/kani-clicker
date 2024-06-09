@@ -49,6 +49,8 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
         run: pnpm install
+      - name: Lint and Format
+        run: pnpm run lint && pnpm run format
       - name: Build
         run: pnpm build
       - name: Upload artifact
