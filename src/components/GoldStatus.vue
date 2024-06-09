@@ -2,6 +2,7 @@
 import { useGoldStore } from '@/stores/gold'
 import { useNetStore } from '@/stores/net'
 import { computed } from 'vue'
+import { useFatherStore } from '@/stores/father'
 const gold = useGoldStore()
 
 function floor(target: number, n: number) {
@@ -10,9 +11,10 @@ function floor(target: number, n: number) {
 
 // 困ったらあとでどこかにまとめる
 const net = useNetStore()
+const father = useFatherStore()
 
 const kaniPerSec = computed(() => {
-  return net.power
+  return net.power + father.power
 })
 </script>
 

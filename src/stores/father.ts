@@ -3,16 +3,16 @@ import { defineStore } from 'pinia'
 import { useGoldStore } from '@/stores/gold'
 import { useLocalStorage } from '@vueuse/core'
 
-export const useNetStore = defineStore('net', () => {
-  const originalPower = 0.5
-  const power = useLocalStorage('net/power', 0)
+export const useFatherStore = defineStore('father', () => {
+  const originalPower = 1
+  const power = useLocalStorage('father/power', 0)
   const setPower = (value: number) => {
     power.value = value
   }
 
-  const upgradeCount = useLocalStorage('net/upgradeCount', 0)
+  const upgradeCount = useLocalStorage('father/upgradeCount', 0)
   const upgradeCost = computed(() => {
-    return Math.floor(2 ** upgradeCount.value + 15)
+    return Math.floor(3.3 ** upgradeCount.value + 15)
   })
   const upgrade = () => {
     const cost = upgradeCost.value

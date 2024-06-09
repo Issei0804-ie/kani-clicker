@@ -10,6 +10,7 @@ import clickRareSe from '@/assets/se/rare-click.mp3'
 import ClickKani from '@/components/animation/ClickKani.vue'
 import { ref } from 'vue'
 import { rand } from '@vueuse/core'
+import GitHubLink from '@/components/GitHubLink.vue'
 
 const clicker = useClickerStore()
 const { play: playNormalClickSe } = useSound(clickSe, { volume: 0.3 })
@@ -46,6 +47,7 @@ const onClickKani = () => {
     <click-kani v-for="id in kaniAnimations" :key="id" class="click-kani-animation" />
   </div>
   <upgrade-bar />
+  <git-hub-link />
 </template>
 
 <style scoped lang="scss">

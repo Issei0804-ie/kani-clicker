@@ -1,8 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useClickerStore } from '@/stores/clicker'
+
+const clicker = useClickerStore()
+</script>
 
 <template>
   <div class="click-kani">
-    <p>+1</p>
+    <p>+{{ clicker.power }}</p>
     <img src="@/assets/kani/clicked.jpg" width="20px" height="20px" />
   </div>
 </template>

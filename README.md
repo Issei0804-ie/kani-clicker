@@ -1,7 +1,9 @@
 # kani-clicker
 
-
 [LICENSE of The repository that exclude assets](./LICENSE)
+
+## site-url
+https://issei0804-ie.github.io/kani-clicker/
 
 ## SE License
 
