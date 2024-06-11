@@ -18,6 +18,21 @@ const { play: playRareClickSe } = useSound(clickRareSe, { volume: 0.5 })
 
 const kaniAnimations = ref<number[]>([])
 
+// @ts-expect-error
+const mobileNoScaling = (event) => {
+  // ２本指での操作の場合
+  if (event.touches.length >= 2) {
+    // デフォルトの動作をさせない
+    event.preventDefault()
+  }
+}
+
+const noScaling = () => {
+  document.addEventListener('touchmove', mobileNoScaling, { passive: false })
+}
+
+noScaling()
+
 const onClickKani = () => {
   if (Math.random() < 0.03) {
     playRareClickSe()
